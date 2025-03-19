@@ -2021,7 +2021,6 @@ a {
   font-weight: 700;
 }
 .search-engine__swiper-container {
-  min-width: 100%;
   max-width: 445px;
   position: relative;
 }
@@ -2806,8 +2805,8 @@ a {
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-filter: blur(1350px);
-  filter: blur(1350px);
+  -webkit-filter: blur(280px);
+  filter: blur(280px);
   z-index: 0;
 }
 .advantages__content {
