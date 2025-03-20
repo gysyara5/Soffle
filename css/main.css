@@ -692,6 +692,10 @@ a {
   margin-top: -100%;
 }
 
+.double-scroll {
+  will-change: transform;
+}
+
 .double-scroll-content-second .vertical-scroll-item {
   -webkit-transition: 0.3s ease-in;
   -o-transition: 0.3s ease-in;
