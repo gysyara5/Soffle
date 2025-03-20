@@ -226,14 +226,22 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+  console.log(ScrollSmoother);
+  /*  ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 1,
+    effects: true,
+    normalizeScroll: true,
+  }); */
+
   if (window.innerWidth > 1024) {
     // Конфигурация ScrollTrigger
 
     ScrollTrigger.config({
       limitCallbacks: true,
-      ignoreMobileResize: true,
-      autoUpdateEvents: "visibilitychange,DOMContentLoaded,load"
+      ignoreMobileResize: true
     });
 
     // Выбор секций
@@ -253,11 +261,9 @@ document.addEventListener("DOMContentLoaded", () => {
       items.forEach((item, index) => {
         if (index !== 0) {
           direction == "horizontal" ? gsap.set(item, {
-            xPercent: 100,
-            force3D: true
+            xPercent: 100
           }) : gsap.set(item, {
-            yPercent: 100,
-            force3D: true
+            yPercent: 100
           });
         }
       });
