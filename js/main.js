@@ -263,6 +263,7 @@ document.addEventListener("DOMContentLoaded", () => {
         scrollTrigger: {
           trigger: section,
           pin: true,
+          pinType: "transform",
           start: "top top",
           end: () => `+=${(items.length - 1) * 100}%`,
           // Исправлено
