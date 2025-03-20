@@ -254,7 +254,8 @@ document.addEventListener("DOMContentLoaded", () => {
           direction == "horizontal" ? gsap.set(item, {
             xPercent: 100
           }) : gsap.set(item, {
-            yPercent: 100
+            yPercent: 100,
+            force3D: true
           });
         }
       });
