@@ -226,16 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-  console.log(ScrollSmoother);
-  /*  ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1,
-    effects: true,
-    normalizeScroll: true,
-  }); */
-
+  gsap.registerPlugin(ScrollTrigger);
   if (window.innerWidth > 1024) {
     // Конфигурация ScrollTrigger
 
