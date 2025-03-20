@@ -155,47 +155,6 @@ __webpack_require__.r(__webpack_exports__);
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Scrollbar]);
 document.addEventListener("DOMContentLoaded", () => {
-  /* const slider = document.querySelector(".scroll-content");
-   let isDown = false;
-  let startX;
-  let scrollLeft;
-  let isScrolling = false; // Флаг для отслеживания, был ли выполнен свайп
-   slider.addEventListener("mousedown", (e) => {
-    isDown = true;
-    slider.classList.add("active");
-    startX = e.pageX - slider.offsetLeft;
-    scrollLeft = slider.scrollLeft;
-    isScrolling = false; // Сбрасываем флаг при начале нажатия
-  });
-   slider.addEventListener("mouseleave", () => {
-    isDown = false;
-    slider.classList.remove("active");
-  });
-   slider.addEventListener("mouseup", () => {
-    isDown = false;
-    slider.classList.remove("active");
-  });
-   slider.addEventListener("mousemove", (e) => {
-    if (!isDown) return;
-    e.preventDefault();
-    const x = e.pageX - slider.offsetLeft;
-    const walk = (x - startX) * 1;
-    slider.scrollLeft = scrollLeft - walk;
-    isScrolling = true; // Устанавливаем флаг, если был выполнен свайп
-  });
-   // Обработчик для предотвращения клика по ссылкам после свайпа
-  slider.addEventListener(
-    "click",
-    (e) => {
-      if (isScrolling) {
-        e.preventDefault();
-        e.stopPropagation();
-        isScrolling = false; // Сбрасываем флаг после предотвращения клика
-      }
-    },
-    true
-  ); */
-
   const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".hero__swiper", {
     direction: "horizontal",
     spaceBetween: 14,
