@@ -99,7 +99,63 @@
         <section class="hero">
   <div class="container">
     <div class="hero__content">
-      <div class="hero__scroll scroll-content">
+      <div class="hero__swiper swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide-1">
+            <a href="#" class="hero__item">
+              <div
+                class="hero__item-img-container"
+                style="background-image: url(./img/hero-item1.webp)"
+              ></div>
+              <span class="hero__item-name">Dubai</span>
+            </a>
+          </div>
+          <div class="swiper-slide slide-2">
+            <a href="#" draggable="false" class="hero__item">
+              <div
+                class="hero__item-img-container"
+                style="background-image: url(./img/hero-item2.webp)"
+              ></div>
+              <span class="hero__item-name">Phuket</span>
+            </a>
+          </div>
+          <div class="swiper-slide slide-3">
+            <a href="#" draggable="false" class="hero__item">
+              <div
+                class="hero__item-img-container"
+                style="background-image: url(./img/hero-item3.webp)"
+              >
+                <span class="hero__item-coming">Coming soon</span>
+              </div>
+              <span class="hero__item-name">Riyadh</span>
+            </a>
+          </div>
+
+          <div class="swiper-slide slide-4">
+            <a href="#" draggable="false" class="hero__item">
+              <div
+                class="hero__item-img-container"
+                style="background-image: url(./img/hero-item4.webp)"
+              >
+                <span class="hero__item-coming">Coming soon</span>
+              </div>
+              <span class="hero__item-name">Almaty</span>
+            </a>
+          </div>
+          <div class="swiper-slide slide-5">
+            <a href="#" draggable="false" class="hero__item last">
+              <div class="hero__item-img-container">
+                <div class="hero__item-future hero__item-name">Moscow</div>
+                <span class="hero__item-text">to be continued</span>
+              </div>
+              <span class="hero__item-name"></span>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+
+      <!--   <div class="hero__scroll scroll-content">
         <a href="#" class="hero__item">
           <div
             class="hero__item-img-container"
@@ -166,7 +222,7 @@
           </div>
           <span class="hero__item-name"></span>
         </a>
-      </div>
+      </div> -->
     </div>
   </div>
 </section>
@@ -389,9 +445,10 @@
                               </div>
                             </div>
                           </div>
+                          <div class="swiper-scrollbar-engine"></div>
                           <div class="swiper-button-prev"></div>
                           <div class="swiper-button-next"></div>
-                          <div class="swiper-scrollbar"></div>
+
                           <h3 class="search-engine__slide-title">
                             Events you dont wanna miss
                           </h3>
@@ -405,7 +462,9 @@
                 <div class="filters vertical-scroll-section">
                   <div class="filters__wrapper wrapper-scroll-height">
                     <div class="container">
-                      <div class="filters__content double-scroll-content-second">
+                      <div
+                        class="filters__content double-scroll-content-second"
+                      >
                         <div class="filters__info">
                           <h3 class="filters__title">
                             Boring overloaded website filters
@@ -475,224 +534,6 @@
             </div>
           </div>
         </div>
-
-        <!--   <div class="swipe-section">
-          <section class="panel ">
-            <div class="download-app vertical-scroll-section">
-              <div class="download-app__wrapper wrapper-scroll-height">
-                <div class="container">
-                  <span class="download-app__title-mobile"
-                    >A <span class="f-bold">unique</span> content recommendation
-                    system</span
-                  >
-                  <div class="download-app__main-img-container">
-                    <picture class="download-app__main-img">
-                      <source
-                        srcset="./img/download-app-1.webp"
-                        media="(min-width: 1024px)"
-                      />
-                      <img src="./img/download-app-1-mob.webp" alt="" />
-                    </picture>
-                  </div>
-
-                  <h2 class="download-app__title">
-                    Tired of the tediousб<br />
-                    internet search?
-                  </h2>
-                  <span class="download-app__subtitle"
-                    >download the Shuffle app and just choose</span
-                  >
-                  <a href="#" class="download-app__link">download app</a>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="panel">
-            <div class="visiting vertical-scroll-section">
-              <div class="visiting__wrapper wrapper-scroll-height">
-                <div class="container">
-                  <div class="visiting__content">
-                    <div class="vertical-scroll aura">
-                      <div class="vertical-wrapper">
-                        <div class="vertical-scroll-item">
-                          <img src="./img/visiting-img-1.webp" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                    <div class="visiting__text">
-                      <h2 class="visiting__title">
-                        Visiting mostly questionable sites
-                      </h2>
-                      <p class="visiting__desc">
-                        With Shuffle you always get guaranteed quality and
-                        <span class="c-pink">relevant content</span> with 2 taps
-                      </p>
-                      <div class="visiting__info">
-                        <div class="visiting__info-item white">
-                          <img src="./img/visiting-item-img.webp" alt="" />
-                          <p class="visiting__info-item-desc">
-                            Leave untested resources in the past
-                          </p>
-                        </div>
-                        <div class="visiting__info-item dark">
-                          <p class="visiting__info-item-desc big">
-                            Start using a convenient and responsive service
-                          </p>
-                          <a
-                            href="#"
-                            class="visiting__info-item-link hover-yellow-in-white"
-                            >open Shuffle</a
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="panel">
-            <div class="search-engine vertical-scroll-section">
-              <div class="search-engine__wrapper wrapper-scroll-height">
-                <div class="container">
-                  <div class="search-engine__content">
-                    <div class="search-engine__info">
-                      <h2 class="search-engine__title">
-                        Scroll search engine results
-                      </h2>
-                      <p class="search-engine__desc">
-                        There is no need to search for anything, a unique
-                        <span class="c-dark-pink">recommendation system</span>
-                        works
-                      </p>
-                    </div>
-                    <div class="search-engine__swiper-container">
-                      <div class="search-engine__swiper swiper">
-                        <div class="swiper-wrapper">
-                          <div class="swiper-slide">
-                            <div class="swiper-slide-padding">
-                              <div class="search-engine__slide-wrapper">
-                                <div class="search-engine__slide-content">
-                                  <div class="search-engine__slide-upper-nav">
-                                    <span
-                                      class="search-engine__slide-upper-title"
-                                      >Dance Again</span
-                                    >
-                                    <span
-                                      class="search-engine__slide-upper-desc"
-                                      >Unique place for unique people</span
-                                    >
-                                    <div
-                                      class="search-engine__slide-upper-links"
-                                    >
-                                      <a
-                                        href="#"
-                                        class="search-engine__slide-upper-link"
-                                        >Club</a
-                                      >
-                                      <a
-                                        href="#"
-                                        class="search-engine__slide-upper-link"
-                                        >Cheap</a
-                                      >
-                                      <a
-                                        href="#"
-                                        class="search-engine__slide-upper-link"
-                                        >Opened</a
-                                      >
-                                    </div>
-                                  </div>
-                                  <div class="search-engine__slide-bottom-nav">
-                                    <img src="./img/img-nav.webp" alt="" />
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="swiper-slide">
-                            <img
-                              src="./img/search-slide-2.webp"
-                              alt=""
-                              class="swiper-slide-img-2"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                      <div class="swiper-button-prev"></div>
-                      <div class="swiper-button-next"></div>
-                      <div class="swiper-scrollbar"></div>
-                      <h3 class="search-engine__slide-title">
-                        Events you dont wanna miss
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="panel">
-            <div class="filters vertical-scroll-section">
-              <div class="filters__wrapper wrapper-scroll-height">
-                <div class="container">
-                  <div class="filters__content">
-                    <div class="filters__info">
-                      <h3 class="filters__title">
-                        Boring overloaded website filters
-                      </h3>
-                      <p class="filters__desc">
-                        You can use ready-made smart collections or smart search
-                      </p>
-                      <a href="#" class="filters__link">powered by ai</a>
-                    </div>
-                    <div class="vertical-scroll aura">
-                      <div class="vertical-wrapper">
-                        <div class="vertical-scroll-item">
-                          <img src="./img/filters-slide-1.webp" alt="" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="panel">
-            <div class="eco vertical-scroll-section">
-              <div class="eco__wrapper wrapper-scroll-height">
-                <div class="container">
-                  <div class="eco__content">
-                    <div class="eco__info">
-                      <div class="eco__info-upper">
-                        <h3 class="eco__info-title">Third-party resources</h3>
-                        <p class="eco__info-desc">
-                          The final result and/or experience is likely to be
-                          negative
-                        </p>
-                      </div>
-                      <div class="eco__bottom">
-                        <p class="eco__bottom-desc">
-                          Don't waste your time and energy <br />
-                          in vain
-                        </p>
-                      </div>
-                    </div>
-                    <div class="eco__right">
-                      <h3 class="eco__right-title">
-                        Just <span class="c-yellow">two steps</span> with love
-                      </h3>
-                      <p class="eco__right-desc">
-                        Take advantage of unique opportunities
-                      </p>
-                      <a href="#" class="eco__right-link hover-white-in-yellow"
-                        >open Shuffle app</a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div> -->
 
         <section class="advantages">
           <div class="advantages__wrapper">

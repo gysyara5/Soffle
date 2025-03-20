@@ -155,29 +155,27 @@ __webpack_require__.r(__webpack_exports__);
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Scrollbar]);
 document.addEventListener("DOMContentLoaded", () => {
-  const slider = document.querySelector(".scroll-content");
-  let isDown = false;
+  /* const slider = document.querySelector(".scroll-content");
+   let isDown = false;
   let startX;
   let scrollLeft;
   let isScrolling = false; // Флаг для отслеживания, был ли выполнен свайп
-
-  slider.addEventListener("mousedown", e => {
+   slider.addEventListener("mousedown", (e) => {
     isDown = true;
     slider.classList.add("active");
     startX = e.pageX - slider.offsetLeft;
     scrollLeft = slider.scrollLeft;
     isScrolling = false; // Сбрасываем флаг при начале нажатия
   });
-
-  slider.addEventListener("mouseleave", () => {
+   slider.addEventListener("mouseleave", () => {
     isDown = false;
     slider.classList.remove("active");
   });
-  slider.addEventListener("mouseup", () => {
+   slider.addEventListener("mouseup", () => {
     isDown = false;
     slider.classList.remove("active");
   });
-  slider.addEventListener("mousemove", e => {
+   slider.addEventListener("mousemove", (e) => {
     if (!isDown) return;
     e.preventDefault();
     const x = e.pageX - slider.offsetLeft;
@@ -185,15 +183,35 @@ document.addEventListener("DOMContentLoaded", () => {
     slider.scrollLeft = scrollLeft - walk;
     isScrolling = true; // Устанавливаем флаг, если был выполнен свайп
   });
+   // Обработчик для предотвращения клика по ссылкам после свайпа
+  slider.addEventListener(
+    "click",
+    (e) => {
+      if (isScrolling) {
+        e.preventDefault();
+        e.stopPropagation();
+        isScrolling = false; // Сбрасываем флаг после предотвращения клика
+      }
+    },
+    true
+  ); */
 
-  // Обработчик для предотвращения клика по ссылкам после свайпа
-  slider.addEventListener("click", e => {
-    if (isScrolling) {
-      e.preventDefault();
-      e.stopPropagation();
-      isScrolling = false; // Сбрасываем флаг после предотвращения клика
-    }
-  }, true);
+  const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".hero__swiper", {
+    direction: "horizontal",
+    spaceBetween: 14,
+    // Отступ между слайдами в пикселях
+    scrollbar: {
+      el: ".swiper-scrollbar",
+      draggable: true,
+      hide: false
+    },
+    // Отключение автоматического расчета размеров слайдов
+    autoHeight: false,
+    slidesPerView: "auto",
+    // Позволяет слайдам иметь разную ширину
+    freeMode: true // Свободный режим для прокрутки
+  });
+
   const uniquenessSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".uniqueness__swiper", {
     spaceBetween: 16,
     slidesPerView: 1.1,
@@ -210,7 +228,7 @@ document.addEventListener("DOMContentLoaded", () => {
       prevEl: ".swiper-button-prev"
     },
     scrollbar: {
-      el: ".swiper-scrollbar",
+      el: ".swiper-scrollbar-engine",
       draggable: true
     },
     breakpoints: {
@@ -252,9 +270,11 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
   if (window.innerWidth > 1024) {
     // Конфигурация ScrollTrigger
+    ScrollTrigger.normalizeScroll(true);
     ScrollTrigger.config({
       limitCallbacks: true,
-      ignoreMobileResize: true
+      ignoreMobileResize: true,
+      autoUpdateEvents: "visibilitychange,DOMContentLoaded,load"
     });
 
     // Выбор секций
