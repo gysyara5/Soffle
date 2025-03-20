@@ -719,6 +719,14 @@ a {
   margin-top: -100%;
 }
 
+.vertical-section {
+  will-change: transform;
+}
+
+.scroll-section .item {
+  will-change: transform;
+}
+
 .header {
   margin-bottom: 72px;
   margin-top: 36px;

@@ -230,9 +230,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.normalizeScroll(true);
   if (window.innerWidth > 1024) {
     // Конфигурация ScrollTrigger
-
     ScrollTrigger.config({
       limitCallbacks: true,
       ignoreMobileResize: true
@@ -270,8 +270,10 @@ document.addEventListener("DOMContentLoaded", () => {
           start: "top top",
           end: () => `+=${(items.length - 1) * 100}%`,
           // Исправлено
-          scrub: 0.5,
-          invalidateOnRefresh: true
+          scrub: true,
+          invalidateOnRefresh: true,
+          force3D: true,
+          fastScrollEnd: true
         },
         defaults: {
           ease: "none"
@@ -438,7 +440,6 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
     document.head.appendChild(style);
   }
-  if (window.innerWidth < 1024) {}
 });
 
 /***/ }),
