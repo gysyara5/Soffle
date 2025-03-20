@@ -229,7 +229,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
   if (window.innerWidth > 1024) {
     // Конфигурация ScrollTrigger
-    ScrollTrigger.normalizeScroll(true);
+
     ScrollTrigger.config({
       limitCallbacks: true,
       ignoreMobileResize: true,
