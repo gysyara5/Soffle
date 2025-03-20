@@ -251,8 +251,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   gsap.registerPlugin(ScrollTrigger);
   if (window.innerWidth > 1024) {
-    // Select the HTML elements needed for the animation
-
     // Конфигурация ScrollTrigger
     ScrollTrigger.config({
       limitCallbacks: true,
@@ -310,75 +308,47 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     }
-  }
-
-  /* if (window.innerWidth > 1024) {
-    let currentIndex = 0;
-    let animating;
-    let swipePanels = gsap.utils.toArray(".swipe-section .panel");
-     // set z-index levels for the swipe panels
-    let reversedPanels = [...swipePanels].reverse();
-    reversedPanels.forEach((panel, index) => {
-      gsap.set(panel, { zIndex: index });
-    });
-     // create an observer and disable it to start
-    let intentObserver = ScrollTrigger.observe({
-      type: "wheel,touch",
-      onUp: () => !animating && gotoPanel(currentIndex - 1, false),
-      onDown: () => !animating && gotoPanel(currentIndex + 1, true),
-      tolerance: 10,
-      preventDefault: true,
-    });
-    intentObserver.disable();
-     // handle the panel swipe animations
-    function gotoPanel(index, isScrollingDown) {
-      animating = true;
-      // return to normal scroll if we're at the end or back up to the start
-      if (
-        (index === swipePanels.length && isScrollingDown) ||
-        (index === -1 && !isScrollingDown)
-      ) {
-        intentObserver.disable();
-        return;
-      }
-       let target = isScrollingDown
-        ? swipePanels[currentIndex]
-        : swipePanels[index];
-      gsap.to(target, {
-        yPercent: isScrollingDown ? -100 : 0,
-        duration: 0.75,
-        onComplete: () => (animating = false),
-      });
-       currentIndex = index;
-    }
-     // pin swipe section and initiate observer
+    const verticalScroll = Array.from(document.querySelectorAll(".double-scroll-content"));
     ScrollTrigger.create({
-      trigger: ".swipe-section",
-      pin: true,
+      trigger: verticalScroll[0],
       start: "top top",
+      // Начинается, когда верхняя граница элемента достигает верха окна
+      end: `+=100px`,
+      // Заканчивается после прокрутки всей высоты контента
+      pinSpacing: false,
+      // Отключаем дополнительное пространство для пина
+      scrub: 0.5,
+      markers: true,
+      onEnterBack: () => {},
       onEnter: () => {
-        intentObserver.enable();
-        gotoPanel(currentIndex + 1, true);
+        verticalScroll[0].classList.add("active");
       },
-      onEnterBack: () => {
-        intentObserver.enable();
-        gotoPanel(currentIndex - 1, false);
+      onLeaveBack: () => {
+        verticalScroll[0].classList.remove("active");
       },
+      onLeave: () => {}
     });
-     // horizontal scrolling section
-    let horizontalSections = document.querySelectorAll(".horizontal .panel");
-    gsap.to(horizontalSections, {
-      xPercent: -100 * (horizontalSections.length - 1),
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".horizontal",
-        pin: true,
-        scrub: 1,
-        end: "+=3500",
+    const verticalScrollSecond = Array.from(document.querySelectorAll(".double-scroll-content-second"));
+    ScrollTrigger.create({
+      trigger: verticalScrollSecond[0],
+      start: "1820px",
+      // Начинается, когда верхняя граница элемента достигает верха окна
+      end: `+=100px`,
+      // Заканчивается после прокрутки всей высоты контента
+      pinSpacing: false,
+      // Отключаем дополнительное пространство для пина
+      scrub: 0.5,
+      markers: true,
+      onEnterBack: () => {},
+      onEnter: () => {
+        verticalScrollSecond[0].classList.add("active");
       },
+      onLeaveBack: () => {
+        verticalScrollSecond[0].classList.remove("active");
+      },
+      onLeave: () => {}
     });
-  } */
-
+  }
   if (window.innerWidth > 1024) {
     let container = document.querySelector(".uniqueness__scroll");
     let slides = document.querySelectorAll(".uniqueness__scroll-item");
