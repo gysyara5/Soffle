@@ -318,7 +318,6 @@ document.addEventListener("DOMContentLoaded", () => {
       pinSpacing: false,
       // Отключаем дополнительное пространство для пина
       scrub: 0.5,
-      markers: true,
       onEnterBack: () => {},
       onEnter: () => {
         verticalScroll[0].classList.add("active");
@@ -338,7 +337,6 @@ document.addEventListener("DOMContentLoaded", () => {
       pinSpacing: false,
       // Отключаем дополнительное пространство для пина
       scrub: 0.5,
-      markers: true,
       onEnterBack: () => {},
       onEnter: () => {
         verticalScrollSecond[0].classList.add("active");
