@@ -274,11 +274,10 @@ document.addEventListener("DOMContentLoaded", () => {
           invalidateOnRefresh: true,
           force3D: true,
           fastScrollEnd: true
-        },
-        defaults: {
-          ease: "none"
         }
+        /*   defaults: { ease: "none" }, */
       });
+
       items.forEach((item, index) => {
         if (index < items.length - 1) {
           // Убедитесь, что не выходим за пределы массива
