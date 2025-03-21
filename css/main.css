@@ -82,10 +82,6 @@ a {
   text-decoration: none;
 }
 
-.site-container {
-  overflow: hidden;
-}
-
 .is-hidden {
   display: none !important; /* stylelint-disable-line declaration-no-important */
 }
@@ -558,13 +554,11 @@ a {
   color: #000;
 }
 
-.section {
+/* .section {
   overflow: hidden;
-}
-
+} */
 .wrapper {
-  height: 100vh;
-  /*  height: 100%; */
+  /*   height: 100vh; */
 }
 @media (max-width: 1024px) {
   .wrapper {
@@ -572,43 +566,29 @@ a {
   }
 }
 
-.list {
-  -webkit-box-pack: start;
-  -ms-flex-pack: start;
+/* .list {
   justify-content: flex-start;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
   align-items: center;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
+
   position: relative;
-}
-@media (max-width: 1024px) {
-  .list {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-    -ms-flex-direction: column;
+  @include tablet {
     flex-direction: column;
   }
-}
-.list .item {
-  width: 100vw;
-  height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  position: absolute;
-  inset: 0%;
-  overflow: hidden;
-}
-@media (max-width: 1024px) {
-  .list .item {
-    position: static;
+  .item {
+    width: 100vw;
+    height: 100%;
+    display: flex;
+     position: absolute;
+    inset: 0%;
+    height: 100vh;
+    overflow: hidden;
+    @include tablet {
+      position: static;
+    }
   }
-}
-
+} */
 .item_media {
   -o-object-fit: cover;
   object-fit: cover;
@@ -710,6 +690,7 @@ a {
 }
 .double-scroll-content-second .vertical-scroll-item:nth-child(2) {
   margin-top: 30px;
+  opacity: 0;
 }
 @media (max-width: 1024px) {
   .double-scroll-content-second .vertical-scroll-item:nth-child(2) {
@@ -731,6 +712,28 @@ a {
 
 .scroll-section .item {
   will-change: transform;
+}
+
+.scroll-section .item {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.pin-spacer-out {
+  position: sticky !important;
+  top: 0 !important;
+  padding: 0 !important;
+}
+.pin-spacer-out .vertical-scroll-in {
+  -webkit-transform: unset !important;
+  -ms-transform: unset !important;
+  transform: unset !important;
+}
+.pin-spacer-out .vertical-scroll-in-second {
+  -webkit-transform: unset !important;
+  -ms-transform: unset !important;
+  transform: unset !important;
 }
 
 .header {
