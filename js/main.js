@@ -302,7 +302,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: verticalScrollIn,
       start: "top top",
       // Начинается, когда верхняя граница элемента достигает верха окна
-      end: `+=350px`,
+      end: `+=450px`,
       // Заканчивается после прокрутки всей высоты контента
       pinType: "transform",
       pin: true,
@@ -330,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: verticalScrollInSecond,
       start: "top top",
       // Начинается, когда верхняя граница элемента достигает верха окна
-      end: `+=350px`,
+      end: `+=450px`,
       // Заканчивается после прокрутки всей высоты контента
       pinType: "transform",
       pin: true,

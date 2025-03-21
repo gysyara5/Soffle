@@ -99,11 +99,6 @@ a {
   padding: 0;
 }
 
-*::after,
-*::before {
-  display: none !important;
-}
-
 .input-reset {
   -webkit-appearance: none;
   -moz-appearance: none;
