@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   gsap.registerPlugin(ScrollTrigger);
-  ScrollTrigger.normalizeScroll(true);
+  ScrollTrigger.normalizeScroll(false);
   if (window.innerWidth > 1024) {
     // Конфигурация ScrollTrigger
     ScrollTrigger.config({
@@ -270,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
           start: "top top",
           end: () => `+=${(items.length - 1) * 100}%`,
           // Исправлено
-          scrub: true,
+          scrub: 1,
           invalidateOnRefresh: true,
           force3D: true,
           fastScrollEnd: true
@@ -299,7 +299,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Заканчивается после прокрутки всей высоты контента
       pinSpacing: false,
       // Отключаем дополнительное пространство для пина
-      scrub: 0.5,
+      scrub: 1,
       onEnterBack: () => {},
       onEnter: () => {
         verticalScroll[0].classList.add("active");
@@ -318,7 +318,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Заканчивается после прокрутки всей высоты контента
       pinSpacing: false,
       // Отключаем дополнительное пространство для пина
-      scrub: 0.5,
+      scrub: 1,
       onEnterBack: () => {},
       onEnter: () => {
         verticalScrollSecond[0].classList.add("active");
