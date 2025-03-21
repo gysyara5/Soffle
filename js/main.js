@@ -230,7 +230,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   gsap.registerPlugin(ScrollTrigger);
-  ScrollTrigger.normalizeScroll(false);
+  ScrollTrigger.normalizeScroll(true);
   if (window.innerWidth > 1024) {
     // Конфигурация ScrollTrigger
     ScrollTrigger.config({
