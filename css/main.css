@@ -105,13 +105,6 @@ a {
   padding: 0;
 }
 
-*::after,
-*::before {
-  will-change: filter;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
 .input-reset {
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2675,7 +2668,6 @@ a {
 }
 
 .uniqueness {
-  overflow: hidden;
   margin-top: -1px;
   margin-bottom: 72px;
 }
@@ -2686,6 +2678,7 @@ a {
   }
 }
 .uniqueness__wrapper {
+  overflow: hidden;
   background: #fff;
 }
 .uniqueness__swiper {
