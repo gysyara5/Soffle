@@ -1754,9 +1754,6 @@ a {
   max-width: 217px;
 }
 
-.download-app {
-  overflow: hidden;
-}
 .download-app__wrapper {
   background-color: #fce600;
   background-image: url(../img/bg-lines.svg);
@@ -2678,6 +2675,7 @@ a {
 }
 
 .uniqueness {
+  overflow: hidden;
   margin-top: -1px;
   margin-bottom: 72px;
 }
