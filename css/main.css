@@ -1871,6 +1871,10 @@ a {
 }
 
 .visiting__wrapper {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   background-color: #000;
 }
 .visiting__content {
@@ -2004,6 +2008,10 @@ a {
 }
 
 .search-engine__wrapper {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   background-color: #000;
   position: relative;
   display: -webkit-box;
@@ -2305,6 +2313,10 @@ a {
 }
 
 .filters__wrapper {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   background-color: #000;
   position: relative;
   /*   &::after {
