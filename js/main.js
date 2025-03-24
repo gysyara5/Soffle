@@ -161,19 +161,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".hero__swiper", {
     direction: "horizontal",
     spaceBetween: 14,
-    // Отступ между слайдами в пикселях
     scrollbar: {
       el: ".swiper-scrollbar",
       draggable: true,
       hide: false
     },
-    // Отключение автоматического расчета размеров слайдов
     autoHeight: false,
     slidesPerView: "auto",
-    // Позволяет слайдам иметь разную ширину
-    freeMode: true // Свободный режим для прокрутки
+    freeMode: true
   });
-
   const uniquenessSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".uniqueness__swiper", {
     spaceBetween: 16,
     slidesPerView: 1.1,
@@ -232,78 +228,12 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.registerPlugin(ScrollTrigger);
   ScrollTrigger.normalizeScroll(true);
   if (window.innerWidth > 1024) {
-    // Конфигурация ScrollTrigger
-    /*  ScrollTrigger.config({
-      limitCallbacks: true,
-      ignoreMobileResize: true,
-    }); */
-
-    // Выбор секций
-    /*    const scrollSection = document.querySelectorAll(".scroll-section");
-     scrollSection.forEach((section) => {
-      const wrapper = section.querySelector(".wrapper");
-      const items = wrapper.querySelectorAll(".item");
-       let direction = null;
-       if (section.classList.contains("vertical-section")) {
-        direction = "vertical";
-      } else if (section.classList.contains("horizontal-section")) {
-        direction = "horizontal";
-      }
-       initScroll(section, items, direction);
-    });
-     function initScroll(section, items, direction) {
-      items.forEach((item, index) => {
-        if (index !== 0) {
-          direction == "horizontal"
-            ? gsap.set(item, { xPercent: 100 })
-            : gsap.set(item, { yPercent: 100, force3D: true });
-        }
-      });
-       const timeline = gsap.timeline({
-        scrollTrigger: {
-          trigger: section,
-          pin: true,
-          pinType: "transform",
-          start: "top top",
-          end: () => `+=${(items.length - 1) * 100}%`, // Исправлено
-          scrub: 1,
-          invalidateOnRefresh: true,
-          force3D: true,
-          fastScrollEnd: true,
-        },
-          defaults: { ease: "none" },
-      });
-       items.forEach((item, index) => {
-        if (index < items.length - 1) {
-          // Убедитесь, что не выходим за пределы массива
-          timeline.to(item, {});
-           direction == "horizontal"
-            ? timeline.to(
-                items[index + 1],
-                {
-                  xPercent: 0,
-                },
-                "<"
-              )
-            : timeline.to(
-                items[index + 1],
-                {
-                  yPercent: 0,
-                },
-                "<"
-              );
-        }
-      });
-    }
-    */
     const verticalScroll = Array.from(document.querySelectorAll(".double-scroll-content"));
     const verticalScrollIn = document.querySelector(".vertical-scroll-in");
     ScrollTrigger.create({
       trigger: verticalScrollIn,
       start: "top top",
-      // Начинается, когда верхняя граница элемента достигает верха окна
       end: `+=450px`,
-      // Заканчивается после прокрутки всей высоты контента
       pinType: "transform",
       pin: true,
       onLeave: () => {
@@ -313,10 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       trigger: verticalScroll[0],
       start: "top -=200px",
-      // Начинается, когда верхняя граница элемента достигает верха окна
       end: `bottom bottom`,
-      // Заканчивается после прокрутки всей высоты контента
-
       onEnter: () => {
         verticalScroll[0].classList.add("active");
       },
@@ -329,9 +256,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ScrollTrigger.create({
       trigger: verticalScrollInSecond,
       start: "top top",
-      // Начинается, когда верхняя граница элемента достигает верха окна
       end: `+=450px`,
-      // Заканчивается после прокрутки всей высоты контента
       pinType: "transform",
       pin: true,
       onLeave: () => {
@@ -343,31 +268,13 @@ document.addEventListener("DOMContentLoaded", () => {
       start: "top -=200px",
       end: `bottom bottom`,
       onEnter: () => {
-        console.log(verticalScrollInSecond);
         verticalScrollSecond[0].classList.add("active");
       },
       onLeaveBack: () => {
         verticalScrollSecond[0].classList.remove("active");
       }
     });
-
-    /*   ScrollTrigger.create({
-      trigger: verticalScrollSecond[0],
-      start: "1820px", // Начинается, когда верхняя граница элемента достигает верха окна
-      end: `+=100px`, // Заканчивается после прокрутки всей высоты контента
-      pinSpacing: false, // Отключаем дополнительное пространство для пина
-      scrub: 1,
-       onEnterBack: () => {},
-      onEnter: () => {
-        verticalScrollSecond[0].classList.add("active");
-      },
-      onLeaveBack: () => {
-        verticalScrollSecond[0].classList.remove("active");
-      },
-      onLeave: () => {},
-    }); */
   }
-
   if (window.innerWidth > 1024) {
     let container = document.querySelector(".uniqueness__scroll");
     let slides = document.querySelectorAll(".uniqueness__scroll-item");

@@ -107,9 +107,9 @@ a {
 
 *::after,
 *::before {
-  will-change: filter; /* Подсказка для браузера */
+  will-change: filter;
   -webkit-transform: translateZ(0);
-  transform: translateZ(0); /* Создание отдельного слоя */
+  transform: translateZ(0);
 }
 
 .input-reset {
@@ -465,27 +465,23 @@ a {
 }
 .vertical-scroll.aura {
   position: relative;
-}
-.vertical-scroll.aura::after {
-  content: "";
-  top: 50%;
-  position: absolute;
-  z-index: 0;
-  left: 50%;
-  width: 359px;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  height: 518px;
-  border-radius: 274px;
-  -webkit-filter: blur(280px);
-  filter: blur(280px);
-  background: #fce600;
-}
-@media (max-width: 1024px) {
-  .vertical-scroll.aura::after {
-    background: #e574f8;
-  }
+  /*  &::after {
+    content: "";
+    top: 50%;
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    width: 359px;
+    transform: translate(-50%, -50%);
+    height: 518px;
+    border-radius: 274px;
+
+    filter: blur(280px);
+    background: #fce600;
+    @include tablet {
+      background: #e574f8;
+    }
+  } */
 }
 @media (max-width: 1024px) {
   .vertical-scroll {
@@ -574,29 +570,6 @@ a {
   }
 }
 
-/* .list {
-  justify-content: flex-start;
-  align-items: center;
-  height: 100%;
-  display: flex;
-
-  position: relative;
-  @include tablet {
-    flex-direction: column;
-  }
-  .item {
-    width: 100vw;
-    height: 100%;
-    display: flex;
-     position: absolute;
-    inset: 0%;
-    height: 100vh;
-    overflow: hidden;
-    @include tablet {
-      position: static;
-    }
-  }
-} */
 .item_media {
   -o-object-fit: cover;
   object-fit: cover;
@@ -621,6 +594,7 @@ a {
 .wrapper-scroll-height {
   height: 100%;
   padding: 80px 0;
+  position: relative;
 }
 
 @media (max-width: 576px) {
@@ -750,6 +724,33 @@ a {
   transform: unset !important;
 }
 
+.aura-yellow {
+  position: absolute;
+  top: -262px;
+  width: 100%;
+  height: 130%;
+  left: -496px;
+  z-index: 0;
+  background-image: url(../img/yellow-blur.webp);
+  background-size: cover;
+}
+@media (max-width: 1024px) {
+  .aura-yellow {
+    display: none;
+  }
+}
+
+.aura-pink {
+  position: absolute;
+  bottom: 0;
+  width: 700px;
+  height: 1000px;
+  left: 0;
+  z-index: 0;
+  background-image: url(../img/blur-pink.webp);
+  background-size: cover;
+}
+
 .header {
   position: relative;
   z-index: 10;
@@ -871,9 +872,6 @@ a {
   display: none;
 }
 .header .burger--active {
-  /*    position: absolute;
-  right: 22px;
-  top: 33px; */
   z-index: 10;
 }
 .header .burger img {
@@ -1055,7 +1053,7 @@ a {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
-  user-select: none; /* Запрещает выделение текста и элементов */
+  user-select: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1886,6 +1884,8 @@ a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  z-index: 1;
+  position: relative;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
@@ -2018,23 +2018,21 @@ a {
   display: flex;
   -ms-flex-line-pack: center;
   align-content: center;
+  /*    &::after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    bottom: -33px;
+    width: 204px;
+    height: 421px;
+    filter: blur(200px);
+    background: #e574f8;
+  } */
 }
 @media (max-width: 1024px) {
   .search-engine__wrapper {
     padding: 30px 0;
   }
-}
-.search-engine__wrapper::after {
-  content: "";
-  position: absolute;
-  left: 24px;
-  bottom: -33px;
-  width: 204px;
-  height: 421px;
-  /*  transform: translate(-50%, -50%); */
-  -webkit-filter: blur(200px);
-  filter: blur(200px);
-  background: #e574f8;
 }
 .search-engine .swiper-button-next::after,
 .search-engine .swiper-button-prev::after {
@@ -2316,17 +2314,17 @@ a {
 .filters__wrapper {
   background-color: #000;
   position: relative;
-}
-.filters__wrapper::after {
-  content: "";
-  position: absolute;
-  left: 24px;
-  bottom: -33px;
-  width: 204px;
-  height: 421px;
-  -webkit-filter: blur(280px);
-  filter: blur(280px);
-  background: rgb(229, 116, 248);
+  /*   &::after {
+    content: "";
+    position: absolute;
+    left: 24px;
+    bottom: -33px;
+    width: 204px;
+    height: 421px;
+    -webkit-filter: blur(280px);
+    filter: blur(280px);
+    background: rgb(229, 116, 248);
+  } */
 }
 .filters__content {
   display: -webkit-box;
