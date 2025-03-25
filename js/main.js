@@ -227,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   gsap.registerPlugin(ScrollTrigger);
-  ScrollTrigger.normalizeScroll(true);
+  /*  ScrollTrigger.normalizeScroll(true); */
   if (window.innerWidth > 1024) {
     const verticalScroll = Array.from(document.querySelectorAll(".double-scroll-content"));
     const verticalScrollIn = document.querySelector(".vertical-scroll-in");
