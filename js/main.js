@@ -155,9 +155,10 @@ __webpack_require__.r(__webpack_exports__);
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Scrollbar]);
 document.addEventListener("DOMContentLoaded", () => {
-  const lenis = new Lenis({
-    autoRaf: true
-  });
+  /*   const lenis = new Lenis({
+    autoRaf: true,
+  }); */
+
   const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".hero__swiper", {
     direction: "horizontal",
     spaceBetween: 14,
@@ -226,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
   gsap.registerPlugin(ScrollTrigger);
-  ScrollTrigger.normalizeScroll(true);
+  /*   ScrollTrigger.normalizeScroll(true); */
   if (window.innerWidth > 1024) {
     const verticalScroll = Array.from(document.querySelectorAll(".double-scroll-content"));
     const verticalScrollIn = document.querySelector(".vertical-scroll-in");
