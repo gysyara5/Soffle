@@ -155,10 +155,9 @@ __webpack_require__.r(__webpack_exports__);
 
 swiper__WEBPACK_IMPORTED_MODULE_0__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_0__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_0__.Scrollbar]);
 document.addEventListener("DOMContentLoaded", () => {
-  /*   const lenis = new Lenis({
-    autoRaf: true,
-  }); */
-
+  const lenis = new Lenis({
+    autoRaf: true
+  });
   const heroSwiper = new swiper__WEBPACK_IMPORTED_MODULE_0__["default"](".hero__swiper", {
     direction: "horizontal",
     spaceBetween: 14,
